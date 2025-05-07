@@ -29,8 +29,7 @@ use App\Http\Controllers\ProductController;
 
  Route::get('/listbarang/{id}/{nama}', [ListBarangController::class, 'tampilkan']);
 
-Route::get('/', [HomeController::class, 'index']);
-Route::get('/contact', [HomeController::class, 'contact']);
+Route::get('/home', [HomeController::class, 'index']);
 
 Route::get('ameylia', function() {
 Return view('ameylia');
