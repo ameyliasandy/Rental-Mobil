@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ListBarangController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\AuthController;
 
  Route::get('/welcome', function () {
     return view('welcome');
@@ -36,3 +37,20 @@ Return view('ameylia');
 });
 
 Route::get('/produk', [ProductController::class, 'index']);
+
+// REGISTRASI
+Route::get('/registerpage', [AuthController::class, 'showRegister'])->name('registerpage');
+Route::post('/registerpage', [AuthController::class, 'register'])->name('registerpage.post');
+// LOGIN
+Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
+Route::post('/login', [AuthController::class, 'login'])->name('login.store');
+
+// LOGOUT
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+// RESET PASSWORD
+Route::get('/forgot-password', [AuthController::class, 'showForgot'])->name('forgot');
+
+// EDIT PROFIL
+Route::get('/edit-profile', [AuthController::class, 'editProfile'])->middleware('auth')->name('edit.profile');
+Route::post('/edit-profile', [AuthController::class, 'updateProfile'])->middleware('auth')->name('update.profile');
