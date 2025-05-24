@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Contoh Gambar</title>
     <script src="https://cdn.tailwindcss.com/3.4.1"></script>
-    
+  
 
 
 </head>

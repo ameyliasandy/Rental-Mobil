@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ListBarangController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ListProdukController;
 
  Route::get('/welcome', function () {
     return view('welcome');
@@ -54,3 +55,5 @@ Route::get('/forgot-password', [AuthController::class, 'showForgot'])->name('for
 // EDIT PROFIL
 Route::get('/edit-profile', [AuthController::class, 'editProfile'])->middleware('auth')->name('edit.profile');
 Route::post('/edit-profile', [AuthController::class, 'updateProfile'])->middleware('auth')->name('update.profile');
+
+Route::get('/listproduk', [ListProdukController::class, 'show']);
