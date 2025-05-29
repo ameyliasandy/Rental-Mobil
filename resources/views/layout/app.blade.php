@@ -11,12 +11,11 @@
 <body class="bg-gray-100 text-gray-800 font-sans">
 
 <!-- Navbar -->
-@include('components.menu')
+
 
 <!-- Main Content -->
 <main class="container mx-auto mt-10 px-4">
   <div class="bg-white shadow-md rounded-lg p-6">
-    <h2 class="txt-xl font-semibold nb-4">@yield('page_title', 'Judul Halaman')</h2>
     @yield('content')
 </div>
 </main>

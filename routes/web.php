@@ -57,3 +57,4 @@ Route::get('/edit-profile', [AuthController::class, 'editProfile'])->middleware(
 Route::post('/edit-profile', [AuthController::class, 'updateProfile'])->middleware('auth')->name('update.profile');
 
 Route::get('/listproduk', [ListProdukController::class, 'show']);
+Route::post('/listproduk', [ListProdukController::class, 'simpan'])->name('produk.simpan');
